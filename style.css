@@ -1,0 +1,307 @@
+/* --- General Reset & Colorful Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #0f172a 100%);
+    --primary-green: #064e3b;
+    --bright-gold: #fbbf24;
+    --deep-gold: #d97706;
+    --card-white: rgba(255, 255, 255, 0.98);
+    --orange-badge: #f97316;
+}
+
+/* 🕋 DIRECT COLORFUL GRADIENT BACKGROUND */
+body {
+    background: var(--bg-gradient);
+    background-image: linear-gradient(rgba(4, 78, 59, 0.75), rgba(15, 23, 42, 0.85)), 
+                      url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 40px 20px;
+}
+
+/* 🟢 STAGE 1: AUTOMATIC INTRO ANIMATION SCREEN */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, #065f46 0%, #022c22 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: slideUpOut 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards 3s;
+}
+.intro-content { text-align: center; }
+.intro-logo { font-size: 5rem; margin-bottom: 10px; color: #fbbf24; }
+.intro-title {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+.intro-subtitle {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* 🔵 STAGE 2: MAIN DASHBOARD CARDS GRID */
+#main-dashboard {
+    display: none; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fbbf24;
+}
+.header h1 {
+    font-family: 'Cinzel', serif;
+    color: #fbbf24;
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+.header p {
+    color: #f3f4f6;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.tour-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f97316;
+    color: white;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 30px;
+    z-index: 10;
+}
+.tour-img {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 4px solid #fbbf24;
+    background-color: #e5e7eb;
+}
+
+/* 🌟 AAPKE SHARE KIYE GAYE DIRECT IMAGES LINKS UPDATE CARD PE 🌟 */
+.umrah-bg { 
+    /* Makkah Sharif Real Shared View Link */
+    background-image: url('https://images.pexels.com/photos/16012748/pexels-photo-16012748/free-photo-of-close-up-of-kaaba.jpeg'); 
+}
+.baghdad-bg { 
+    /* Baghdad Gause Pak Roza Mubarak Shared View Link */
+    background-image: url('https://i.pinimg.com/originals/49/dd/3c/49dd3cef200ad8210cdd575aeeb4c90e.jpg'); 
+}
+
+.tour-info { padding: 30px; }
+.tour-title {
+    font-size: 1.45rem;
+    color: #044e37;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+.tour-meta {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.tour-price {
+    font-size: 1.75rem;
+    color: #d97706;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background: #fef3c7;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 5px solid #d97706;
+}
+.price-per-person { font-size: 0.95rem; font-weight: 500; color: #6b7280; }
+
+.details-btn, .whatsapp-booking-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(4, 120, 87, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.details-btn:hover, .whatsapp-booking-btn:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    box-shadow: 0 5px 20px rgba(217, 119, 6, 0.4);
+}
+
+/* --- STAGE 3: TOUR DETAIL PACKAGES SECTIONS --- */
+.detailed-itinerary-section {
+    display: none; 
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 2px solid #fbbf24;
+    animation: fadeInBody 0.6s ease forwards;
+}
+
+.details-heading {
+    font-family: 'Cinzel', serif;
+    color: #022c22;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #fbbf24;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.itinerary-timeline {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.day-box {
+    background: #f0fdf4;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #047857;
+}
+
+.day-box h4 {
+    color: #d97706;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.day-box p {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.inclusions-box {
+    margin-top: 30px;
+    background: #fffbeb;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px dashed #d97706;
+}
+
+.inclusions-box h5 {
+    color: #022c22;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.inclusions-box ul {
+    list-style-type: '✓ ';
+    padding-left: 20px;
+    color: #475569;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.whatsapp-booking-btn {
+    background: #25d366 !important;
+    margin-top: 30px;
+}
+
+/* --- WEBSITE FOOTER SECTION --- */
+#website-footer {
+    display: none; 
+    background: linear-gradient(135deg, #022c22 0%, #044e37 100%);
+    border-top: 4px solid #fbbf24;
+    padding: 30px 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+.footer-container { max-width: 1200px; margin: 0 auto; }
+.footer-contact-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(251, 191, 36, 0.4);
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.footer-phone {
+    font-size: 1.5rem;
+    color: #fbbf24;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+.footer-text { color: #ffffff; font-size: 1.1rem; font-weight: 500; margin-bottom: 5px; }
+.footer-credits {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+/* Pure CSS Animations */
+@keyframes slideUpOut { to { transform: translateY(-100%); visibility: hidden; } }
+@keyframes fadeInBody { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
